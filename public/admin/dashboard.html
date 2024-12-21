@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - HAPPIE</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <nav class="admin-nav">
+        <div class="admin-nav-brand">
+            <i class="fas fa-shopping-bag"></i>
+            <span>HAPPIE Admin</span>
+        </div>
+        <div class="admin-nav-user">
+            <span id="adminUsername">Admin</span>
+            <button id="logoutBtn" class="admin-logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <ul class="admin-menu">
+                <li class="active">
+                    <a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#products"><i class="fas fa-box"></i> Products</a>
+                </li>
+                <li>
+                    <a href="#categories"><i class="fas fa-tags"></i> Categories</a>
+                </li>
+                <li>
+                    <a href="#orders"><i class="fas fa-shopping-cart"></i> Orders</a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="admin-main">
+            <div class="admin-header">
+                <h1>Dashboard</h1>
+                <button id="addProductBtn" class="admin-btn primary">
+                    <i class="fas fa-plus"></i> Add New Product
+                </button>
+            </div>
+
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <i class="fas fa-box"></i>
+                    <div class="stat-info">
+                        <h3>Total Products</h3>
+                        <p id="totalProducts">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-tags"></i>
+                    <div class="stat-info">
+                        <h3>Categories</h3>
+                        <p id="totalCategories">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <div class="stat-info">
+                        <h3>Total Orders</h3>
+                        <p id="totalOrders">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-content">
+                <div class="product-list-header">
+                    <h2>Products</h2>
+                    <div class="product-filters">
+                        <select id="categoryFilter">
+                            <option value="all">All Categories</option>
+                        </select>
+                        <input type="text" id="searchProduct" placeholder="Search products...">
+                    </div>
+                </div>
+
+                <div class="product-list">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTableBody">
+                            <!-- Products will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add/Edit Product Modal -->
+    <div id="productModal" class="admin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Product</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="productForm" class="admin-form">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Category</label>
+                    <select id="productCategory" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price (₹)</label>
+                    <input type="number" id="productPrice" name="price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description</label>
+                    <textarea id="productDescription" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Image URL</label>
+                    <input type="url" id="productImage" name="image" required>
+                </div>
+                <div class="form-group">
+                    <label for="productStock">Stock</label>
+                    <input type="number" id="productStock" name="stock" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="admin-btn secondary" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="admin-btn primary">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

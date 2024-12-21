@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPIE - Modern E-commerce</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <i class="fas fa-shopping-bag"></i>
+                HAPPIE
+            </a>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="pages/products.html">Products</a>
+            <a href="pages/categories.html">Categories</a>
+            <a href="pages/about.html">About</a>
+            <a href="pages/cart.html" class="cart-link">
+                Cart <span class="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+    
+    <div class="mobile-nav">
+        <button class="mobile-nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="index.html" class="active">Home</a>
+        <a href="pages/products.html">Products</a>
+        <a href="pages/categories.html">Categories</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/cart.html">Cart <span class="cart-count">0</span></a>
+    </div>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1 class="animated-text">Welcome to HAPPIE</h1>
+            <p class="hero-subtitle">Discover Amazing Products with Secure UPI Payments</p>
+            <div class="cta-buttons">
+                <a href="pages/products.html" class="cta-button primary">Shop Now</a>
+                <a href="pages/categories.html" class="cta-button secondary">Browse Categories</a>
+            </div>
+        </div>
+        <div class="hero-features">
+            <div class="feature-card">
+                <i class="fas fa-truck"></i>
+                <h3>Fast Delivery</h3>
+                <p>Free shipping on orders above ₹499</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Secure Payments</h3>
+                <p>100% secure UPI transactions</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-undo"></i>
+                <h3>Easy Returns</h3>
+                <p>30-day return policy</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="trending-section">
+            <h2>Trending Now</h2>
+            <div class="trending-grid">
+                <!-- Trending products will be loaded dynamically -->
+            </div>
+        </section>
+
+        <section class="categories-preview">
+            <h2>Shop by Category</h2>
+            <div class="category-cards">
+                <div class="category-card electronics">
+                    <div class="category-content">
+                        <h3>Electronics</h3>
+                        <p>Latest gadgets and devices</p>
+                        <a href="pages/categories.html#electronics" class="category-link">Explore</a>
+                    </div>
+                </div>
+                <div class="category-card fashion">
+                    <div class="category-content">
+                        <h3>Fashion</h3>
+                        <p>Trendy clothing and accessories</p>
+                        <a href="pages/categories.html#fashion" class="category-link">Explore</a>
+                    </div>
+                </div>
+                <div class="category-card home">
+                    <div class="category-content">
+                        <h3>Home & Living</h3>
+                        <p>Make your home beautiful</p>
+                        <a href="pages/categories.html#home" class="category-link">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="products-slider" id="featuredProducts">
+                <!-- Featured products will be loaded dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="modern-footer">
+        <div class="footer-waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section company-info">
+                <h3>HAPPIE</h3>
+                <p>Your one-stop destination for premium shopping with secure UPI payments.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/products.html">Products</a></li>
+                    <li><a href="pages/categories.html">Categories</a></li>
+                    <li><a href="pages/about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-info">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +91 1234567890</li>
+                    <li><i class="fas fa-envelope"></i> support@happie.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Shopping Street, City</li>
+                </ul>
+            </div>
+            <div class="footer-section newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get special offers and updates</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HAPPIE. All rights reserved.</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-google-pay"></i>
+                <i class="fab fa-apple-pay"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
