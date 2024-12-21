@@ -238,9 +238,7 @@ app.use((err, req, res, next) => {
 function printAvailableURLs(port) {
     console.log(chalk.blue('\n🌐 Available URLs:'));
     console.log(chalk.green(`• Main Site:        http://localhost:${port}`));
-    console.log(chalk.green(`• Products Page:    http://localhost:${port}/pages/products.html`));
     console.log(chalk.green(`• Admin Login:      http://localhost:${port}/admin/login.html`));
-    console.log(chalk.green(`• Products API:     http://localhost:${port}/api/products`));
     console.log(chalk.yellow('\n💡 Tip: Open these URLs in your browser'));
 }
 
@@ -251,12 +249,15 @@ const server = app.listen(PORT, () => {
 });
 
 // Graceful shutdown
-process.on('SIGINT', () => {
-    server.close(() => {
+process.on('SIGINT', async () => {
+    try {
+        await server.close();
         console.log('Server closed');
-        mongoose.connection.close(false, () => {
-            console.log('MongoDB connection closed');
-            process.exit(0);
-        });
-    });
+        await mongoose.connection.close();
+        console.log('MongoDB connection closed');
+        process.exit(0);
+    } catch (error) {
+        console.error('Error during shutdown:', error);
+        process.exit(1);
+    }
 });
