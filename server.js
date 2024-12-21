@@ -238,9 +238,7 @@ app.use((err, req, res, next) => {
 function printAvailableURLs(port) {
     console.log(chalk.blue('\n🌐 Available URLs:'));
     console.log(chalk.green(`• Main Site:        http://localhost:${port}`));
-    console.log(chalk.green(`• Products Page:    http://localhost:${port}/pages/products.html`));
     console.log(chalk.green(`• Admin Login:      http://localhost:${port}/admin/login.html`));
-    console.log(chalk.green(`• Products API:     http://localhost:${port}/api/products`));
     console.log(chalk.yellow('\n💡 Tip: Open these URLs in your browser'));
 }
 
